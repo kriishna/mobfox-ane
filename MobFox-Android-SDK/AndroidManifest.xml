@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.adsdk.sdk"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <!-- Optional. This permission allow us to send the device id to uniquely identified that device -->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- Optional. This permission allow us to send the network connection type and provide better ads -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!-- Optional. This permission allow us to send the device location and provide more targeted ads-->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	
+    <application android:debuggable="true">
+       <activity
+            android:name="com.adsdk.sdk.banner.InAppWebView"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity
+            android:name="com.adsdk.sdk.video.RichMediaActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name="com.adsdk.sdk.mraid.MraidBrowser"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <meta-data android:name="com.google.android.gms.version"
+               android:value="@integer/google_play_services_version"/>
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+    </application>
+</manifest> 
